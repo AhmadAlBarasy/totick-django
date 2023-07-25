@@ -20,6 +20,6 @@ pip install -r requirements.txt
 ## Common problem
 * if you have trouble signing in to the admin dashboard, just create a superuser using the following command
 ```
-django-admin createsuperuser nameOfUser
+py manage.py createsuperuser
 ```
-replace `nameOfUser` with the name you want and then follow along with the process of creating a superuser.
+then follow along with the process of creating a superuser.
