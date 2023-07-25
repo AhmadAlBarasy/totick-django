@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% block title%}
+ToTick | Create User
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content%}
+    <form method="POST" action="" class="form-group">
+        {{form|crispy}}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+{% endblock %}

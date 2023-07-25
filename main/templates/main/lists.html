@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}ToTick | Lists{% endblock %}
+{% block content %}
+
+    <h1>{{name}}</h1>
+    <form method="POST" action = "#">
+        {% csrf_token %}
+        <ul style="list-style:none;">
+            {% for item in content %}
+                {% if item.complete == True %}
+                    <li><input type="checkbox" value = "clicked" name ="c{{item.id}}" checked> {{item.text}} [Done ✔]</li>
+                {% else %}
+                    <li> <input type="checkbox" value = "clicked" name ="c{{item.id}}">{{item.text}} [To be Done 🕒]</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <input type="text" name = "new" maxlength= "300" minlength = "3">
+        <button type ="submit" name ="save" value="save">Save</button>
+        <button type ="submit" name ="newItem" value="newItem">Add Item</button>
+    </form>
+{% endblock %}

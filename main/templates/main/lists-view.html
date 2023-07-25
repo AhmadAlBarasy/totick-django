@@ -1,0 +1,9 @@
+{% extends 'main/base.html' %}
+
+{% block title %}ToTick | Lists{% endblock %}
+
+{% block content %}
+    {% for td in user.todolist.all  %}
+        <p><a href="lists/{{td.id}}">{{td.title}}</a></p></a>
+    {% endfor %}
+{% endblock %}
